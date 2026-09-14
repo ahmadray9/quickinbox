@@ -1,0 +1,14 @@
+services:
+  quickinbox:
+    build: .
+    container_name: quickinbox
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "8501:8501"
+    volumes:
+      - quickinbox_data:/data
+
+volumes:
+  quickinbox_data:
